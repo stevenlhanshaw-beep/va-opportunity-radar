@@ -1,5 +1,6 @@
 import json
 import os
+import time
 import urllib.parse
 import urllib.request
 from collections import defaultdict
@@ -7,6 +8,7 @@ from datetime import datetime, timezone
 
 RESOURCE_ID = "76f6831d-fac7-4c1f-8313-cc7ff238ddca"
 API = "https://data.virginia.gov/api/3/action/datastore_search"
+
 RESOURCE_PAGE = (
     "https://data.virginia.gov/dataset/"
     "eva-procurement-data-2026-virginia/resource/"
@@ -14,24 +16,23 @@ RESOURCE_PAGE = (
 )
 
 TARGETS = [
-    "roanoke",
-    "salem",
-    "blacksburg",
-    "christiansburg",
-    "radford",
-    "pulaski",
-    "wytheville",
-    "austinville",
+    "Roanoke",
+    "Salem",
+    "Blacksburg",
+    "Christiansburg",
+    "Radford",
+    "Pulaski",
+    "Wytheville",
+    "Austinville",
 ]
 
-SEARCH_FIELDS = [
-    "Shipping City",
-    "Entity Description",
-    "Vendor Address City",
+CITY_FIELDS = [
+    "Shipping_City",
+    "Vendor_Address_City",
 ]
 
 
-def api_get(params):
+def api_get(params, retries=3):
     url = API + "?" + urllib.parse.urlencode(params)
 
     req = urllib.request.Request(
@@ -42,8 +43,27 @@ def api_get(params):
         },
     )
 
-    with urllib.request.urlopen(req, timeout=120) as response:
-        return json.loads(response.read().decode("utf-8"))
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(
+                req, timeout=60
+            ) as response:
+                return json.loads(
+                    response.read().decode("utf-8")
+                )
+        except Exception as exc:
+            if attempt == retries - 1:
+                raise
+
+            print("Retrying after:", exc)
+            time.sleep(3 * (attempt + 1))
+
+
+def get_value(row, *names):
+    for name in names:
+        if name in row and row[name] not in (None, ""):
+            return row[name]
+    return ""
 
 
 def money(value):
@@ -59,47 +79,46 @@ def money(value):
         return 0.0
 
 
-def fetch_target_records():
+def fetch_records():
     records = []
-    seen_ids = set()
+    seen = set()
 
-    for target in TARGETS:
-        print("Querying:", target)
+    for city in TARGETS:
+        for field in CITY_FIELDS:
+            print("Querying:", field, "=", city)
 
-        obj = api_get(
-            {
-                "resource_id": RESOURCE_ID,
-                "q": target,
-                "limit": 5000,
-            }
-        )
+            filters = json.dumps({field: city})
 
-        if not obj.get("success"):
-            raise RuntimeError("Virginia Data API returned an error")
-
-        result = obj.get("result", {})
-
-        print(
-            "  matches reported:",
-            result.get("total", 0),
-        )
-
-        for row in result.get("records", []):
-            haystack = " ".join(
-                str(row.get(field) or "").lower()
-                for field in SEARCH_FIELDS
+            obj = api_get(
+                {
+                    "resource_id": RESOURCE_ID,
+                    "filters": filters,
+                    "limit": 1000,
+                }
             )
 
-            if target not in haystack:
+            if not obj.get("success"):
+                print("API query unsuccessful")
                 continue
 
-            row_id = row.get("_id")
+            result = obj.get("result", {})
+            rows = result.get("records", [])
 
-            if row_id in seen_ids:
-                continue
+            print(
+                "  returned:",
+                len(rows),
+                "of",
+                result.get("total", len(rows)),
+            )
 
-            seen_ids.add(row_id)
-            records.append(row)
+            for row in rows:
+                row_id = row.get("_id")
+
+                if row_id in seen:
+                    continue
+
+                seen.add(row_id)
+                records.append(row)
 
     return records
 
@@ -114,7 +133,14 @@ def build_signals(records):
     )
 
     for row in records:
-        order = str(row.get("Order #") or "").strip()
+        order = str(
+            get_value(
+                row,
+                "Order_#",
+                "Order #",
+                "Order_Number",
+            )
+        ).strip()
 
         if not order:
             continue
@@ -124,12 +150,22 @@ def build_signals(records):
         if item["row"] is None:
             item["row"] = row
 
-        item["total"] += money(row.get("Line Total"))
+        item["total"] += money(
+            get_value(
+                row,
+                "Line_Total",
+                "Line Total",
+            )
+        )
 
         description = str(
-            row.get("Item Description")
-            or row.get("NIGP Description")
-            or ""
+            get_value(
+                row,
+                "Item_Description",
+                "Item Description",
+                "NIGP_Description",
+                "NIGP Description",
+            )
         ).strip()
 
         if (
@@ -145,13 +181,22 @@ def build_signals(records):
         row = item["row"]
 
         city = str(
-            row.get("Shipping City")
-            or row.get("Vendor Address City")
+            get_value(
+                row,
+                "Shipping_City",
+                "Shipping City",
+                "Vendor_Address_City",
+                "Vendor Address City",
+            )
             or "Virginia"
         ).strip().title()
 
         entity = str(
-            row.get("Entity Description")
+            get_value(
+                row,
+                "Entity_Description",
+                "Entity Description",
+            )
             or "Virginia buyer"
         ).strip()
 
@@ -159,18 +204,29 @@ def build_signals(records):
 
         if not description:
             description = str(
-                row.get("NIGP Description")
+                get_value(
+                    row,
+                    "NIGP_Description",
+                    "NIGP Description",
+                )
                 or "Procurement purchase order"
             ).strip()
 
         ordered_date = str(
-            row.get("Ordered Date")
+            get_value(
+                row,
+                "Ordered_Date",
+                "Ordered Date",
+            )
             or "date unavailable"
         ).strip()
 
         vendor = str(
-            row.get("Vendor Name")
-            or ""
+            get_value(
+                row,
+                "Vendor_Name",
+                "Vendor Name",
+            )
         ).strip()
 
         total = round(item["total"], 2)
@@ -195,7 +251,7 @@ def build_signals(records):
         )
 
     signals.sort(
-        key=lambda signal: signal["amount"],
+        key=lambda x: x["amount"],
         reverse=True,
     )
 
@@ -203,14 +259,16 @@ def build_signals(records):
 
 
 def main():
-    records = fetch_target_records()
+    records = fetch_records()
 
-    print("Relevant API records:", len(records))
+    print("Relevant records:", len(records))
 
     signals = build_signals(records)
 
     payload = {
-        "updated": datetime.now(timezone.utc).isoformat(),
+        "updated": datetime.now(
+            timezone.utc
+        ).isoformat(),
         "source": RESOURCE_PAGE,
         "record_count": len(records),
         "count": len(signals),

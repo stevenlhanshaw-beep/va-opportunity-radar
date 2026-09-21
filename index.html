@@ -5,70 +5,467 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
 <title>VA Opportunity Radar</title>
+
 <style>
-:root{--bg:#07111f;--card:#0d1b2a;--line:#20344c;--text:#eef6ff;--muted:#9fb2c8;--green:#57d3a0;--blue:#62a8ff}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(180deg,#07111f,#0a1626);color:var(--text)}
-.wrap{max-width:1050px;margin:auto;padding:24px 17px 64px}header{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:34px}.brand{font-weight:850}.badge{font-size:11px;border:1px solid #275c4b;color:#8ff0c4;padding:7px 9px;border-radius:99px;background:#0c2a22}
-.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.12em}.hero h1{font-size:clamp(40px,8vw,74px);line-height:.98;margin:14px 0;letter-spacing:-2.5px}.lead{max-width:740px;color:var(--muted);font-size:18px;line-height:1.55}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 18px}.tab{appearance:none;background:transparent;color:var(--muted);border:1px solid var(--line);padding:10px 13px;border-radius:10px;font-weight:650}.tab.active{background:#143250;color:#fff;border-color:#2d6595}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.filters input,.filters select{background:#0b1726;color:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-width:160px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat,.card{background:rgba(13,27,42,.92);border:1px solid var(--line);border-radius:16px;padding:17px}.stat b{font-size:26px;display:block}.stat span,.small{color:var(--muted);font-size:13px}
-.section{margin-top:30px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px}.section h2{font-size:22px;margin-bottom:12px}.cards{display:grid;gap:11px}.card{display:grid;grid-template-columns:1fr auto;gap:14px}.tag{display:inline-block;font-size:11px;padding:5px 8px;border-radius:7px;background:#132c42;color:#9bcaff;margin:0 5px 4px 0}.score{font-size:21px;font-weight:850;color:var(--green);text-align:right}.card h3{margin:7px 0 6px;font-size:17px}.card p{margin:0;color:var(--muted);line-height:1.45}.meta{margin-top:10px;color:#c2d1e2;font-size:12px}.note{margin-top:26px;padding:15px;border-left:3px solid var(--blue);background:#0d1b2a;color:var(--muted);font-size:14px;line-height:1.5}.hidden{display:none}
-footer{margin-top:35px;color:#6f859d;font-size:12px}
-@media(max-width:650px){.grid{grid-template-columns:1fr}.card{grid-template-columns:1fr}.score{text-align:left}.filters>*{width:100%}}
+:root{
+  --bg:#07111f;
+  --card:#0d1b2a;
+  --card2:#12243a;
+  --text:#f4f7fb;
+  --muted:#9fb0c3;
+  --accent:#47d7ac;
+  --line:#223750;
+  --blue:#62a8ff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.wrap{
+  width:min(1100px,94%);
+  margin:auto;
+  padding:28px 0 60px;
+}
+h1{
+  margin:0;
+  font-size:clamp(30px,7vw,52px);
+  letter-spacing:-1.5px;
+}
+.subtitle{
+  color:var(--muted);
+  margin-top:8px;
+  line-height:1.5;
+}
+.status{
+  margin-top:20px;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:14px;
+  color:var(--muted);
+}
+.status strong{color:var(--accent)}
+.tabs{
+  display:flex;
+  gap:8px;
+  margin:22px 0 16px;
+  overflow:auto;
+}
+.tab{
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--muted);
+  padding:11px 15px;
+  border-radius:10px;
+  white-space:nowrap;
+  font-weight:700;
+}
+.tab.active{
+  color:#061510;
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.controls{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:10px;
+  margin-bottom:18px;
+}
+input,select{
+  width:100%;
+  background:var(--card);
+  color:var(--text);
+  border:1px solid var(--line);
+  padding:13px;
+  border-radius:10px;
+  font-size:16px;
+}
+.summary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:18px;
+}
+.metric{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px;
+}
+.metric .number{
+  font-size:23px;
+  font-weight:800;
+  color:var(--accent);
+}
+.metric .label{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+}
+.grid{
+  display:grid;
+  gap:12px;
+}
+.card{
+  background:linear-gradient(180deg,var(--card),#0a1726);
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:17px;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:flex-start;
+}
+.place{
+  color:var(--accent);
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.amount{
+  color:var(--blue);
+  font-weight:900;
+  white-space:nowrap;
+}
+.title{
+  font-size:19px;
+  font-weight:800;
+  margin:7px 0;
+}
+.desc{
+  color:#d2dce7;
+  line-height:1.45;
+}
+.meta{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:13px;
+}
+.vendor{
+  margin-top:8px;
+  font-size:13px;
+  color:#c5d3e2;
+}
+.source{
+  display:inline-block;
+  margin-top:12px;
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:700;
+}
+.notice{
+  padding:15px;
+  background:#0b2030;
+  border:1px solid #1c4058;
+  border-radius:12px;
+  color:#c7d9e7;
+  line-height:1.45;
+  margin-bottom:18px;
+}
+.empty{
+  text-align:center;
+  color:var(--muted);
+  padding:35px 10px;
+}
+footer{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:30px;
+  line-height:1.5;
+}
+@media(max-width:650px){
+  .controls{grid-template-columns:1fr}
+  .summary{grid-template-columns:1fr 1fr}
+  .top{display:block}
+  .amount{margin-top:6px}
+}
 </style>
 </head>
+
 <body>
 <div class="wrap">
-<header><div class="brand">◉ VA Opportunity Radar</div><div class="badge">PUBLIC DATA INTELLIGENCE</div></header>
-<section class="hero">
-<div class="eyebrow">SOUTHWEST VIRGINIA • PROTOTYPE</div>
-<h1>See where Virginia<br>money is moving.</h1>
-<p class="lead">Procurement activity, buyer patterns, active-opportunity placeholders and project signals—kept separate so historical purchases are never presented as open bids.</p>
-</section>
+
+<h1>VA Opportunity Radar</h1>
+
+<div class="subtitle">
+Public-data intelligence for Southwest Virginia.
+Track government spending patterns and identify where money is moving.
+</div>
+
+<div class="status" id="status">
+  Loading live Virginia data…
+</div>
 
 <div class="tabs">
-<button class="tab active" data-kind="spend">Spend Signals</button>
-<button class="tab" data-kind="open">Open Opportunities</button>
-<button class="tab" data-kind="project">Project Signals</button>
-</div>
-<div class="filters">
-<input id="search" placeholder="Search signals">
-<select id="place"><option value="">All target locations</option><option>Roanoke</option><option>Salem</option><option>Blacksburg</option><option>Christiansburg</option><option>Radford</option><option>Pulaski</option><option>Wytheville</option></select>
+  <div class="tab active">Spend Signals</div>
+  <div class="tab">Open Opportunities — Coming Soon</div>
+  <div class="tab">Project Signals — Coming Soon</div>
 </div>
 
-<div class="grid">
-<div class="stat"><b>eVA</b><span>2026 procurement data source identified</span></div>
-<div class="stat"><b>SWVA</b><span>Roanoke → New River → Wythe corridor</span></div>
-<div class="stat"><b>3 layers</b><span>Spend • Open • Project signals</span></div>
+<div class="notice">
+  <strong>Spend Signals are not open bids.</strong>
+  These records come from Virginia eVA procurement data and show purchasing
+  activity. They can help identify buyers, vendors, categories and recurring
+  spending patterns. Active solicitations will be shown separately when the
+  Open Opportunities feed is added.
 </div>
 
-<section class="section">
-<div class="section-head"><h2 id="sectionTitle">Spend Signals</h2><div class="small" id="count"></div></div>
-<div id="cards" class="cards"></div>
-</section>
+<div class="controls">
+  <input id="search" placeholder="Search buyer, vendor, description or PO…">
 
-<div class="note"><strong>Data rule:</strong> eVA purchase-order history is a <em>spend signal</em>, not an active bid. Open opportunities will only appear when a source explicitly supports active solicitation status. Project signals will come from public permit/project sources.</div>
-<footer>VA Opportunity Radar • early validation build • no paid hosting required</footer>
+  <select id="place">
+    <option value="">All target locations</option>
+    <option>Roanoke</option>
+    <option>Salem</option>
+    <option>Blacksburg</option>
+    <option>Christiansburg</option>
+    <option>Radford</option>
+    <option>Pulaski</option>
+    <option>Wytheville</option>
+    <option>Austinville</option>
+  </select>
 </div>
+
+<div class="summary">
+  <div class="metric">
+    <div class="number" id="visibleCount">0</div>
+    <div class="label">Signals shown</div>
+  </div>
+
+  <div class="metric">
+    <div class="number" id="totalSpend">$0</div>
+    <div class="label">Spend represented</div>
+  </div>
+
+  <div class="metric">
+    <div class="number" id="locationCount">0</div>
+    <div class="label">Target locations</div>
+  </div>
+</div>
+
+<div class="grid" id="results"></div>
+
+<footer>
+  Data source: Commonwealth of Virginia eVA procurement data.
+  VA Opportunity Radar is an independent public-data research tool and is not
+  affiliated with the Commonwealth of Virginia. Dollar amounts shown are
+  procurement-record amounts, not estimates of future opportunity value.
+</footer>
+
+</div>
+
 <script>
-const data = [
- {kind:"spend",place:"Roanoke",tags:["BUYER ACTIVITY","PROCUREMENT"],title:"Recurring buyer activity",desc:"Groups eVA purchase-order lines by order, buyer and commodity so repeat purchasing patterns can be surfaced.",meta:"Source layer: eVA Procurement Data 2026",score:"Spend"},
- {kind:"spend",place:"Wytheville",tags:["LOCAL","GEOGRAPHY"],title:"Southwest Virginia spend filter",desc:"Uses shipping city/postal, entity and commodity fields to focus on the Roanoke, New River Valley and Wythe corridor.",meta:"Location shown here is a prototype filter example",score:"Local"},
- {kind:"spend",place:"Blacksburg",tags:["VENDOR","CATEGORY"],title:"Vendor and commodity patterns",desc:"Tracks vendor, NIGP description, transaction type, order status and line totals without inventing missing values.",meta:"Historical/current purchasing intelligence",score:"Pattern"},
- {kind:"open",place:"Roanoke",tags:["ACTIVE SOLICITATION","SOURCE REQUIRED"],title:"Open-opportunity feed",desc:"This layer is intentionally not populated with purchase orders. It will contain only records verified by an active-solicitation source.",meta:"Next source integration",score:"Next"},
- {kind:"project",place:"Roanoke",tags:["PERMIT","PROJECT THREAD"],title:"Permit and project signals",desc:"Public permit/project records can be clustered with related activity to reveal projects earlier than a single-record view.",meta:"Initial target: Roanoke public permit/project system",score:"Next"},
- {kind:"project",place:"Salem",tags:["CLUSTERING","INFERENCE LABELED"],title:"Related-record clustering",desc:"Electrical, mechanical, building and occupancy records can be grouped when evidence supports a common project; inferred links stay labeled as inference.",meta:"Project-thread feature",score:"Thread"}
+const TARGETS = [
+  "roanoke",
+  "salem",
+  "blacksburg",
+  "christiansburg",
+  "radford",
+  "pulaski",
+  "wytheville",
+  "austinville"
 ];
-let kind="spend";
-const cards=document.getElementById("cards"), title=document.getElementById("sectionTitle"), count=document.getElementById("count");
-function render(){
- const q=document.getElementById("search").value.toLowerCase(), p=document.getElementById("place").value;
- const rows=data.filter(x=>x.kind===kind && (!p||x.place===p) && (x.title+" "+x.desc+" "+x.tags.join(" ")).toLowerCase().includes(q));
- cards.innerHTML=rows.length?rows.map(x=>`<article class="card"><div>${x.tags.map(t=>`<span class="tag">${t}</span>`).join("")}<h3>${x.title}</h3><p>${x.desc}</p><div class="meta">${x.place} • ${x.meta}</div></div><div class="score">${x.score}</div></article>`).join(""):`<article class="card"><div><h3>No matching signals yet</h3><p>Change the filter or wait until this source layer is connected.</p></div></article>`;
- count.textContent=rows.length+" shown";
+
+let signals = [];
+
+const results = document.getElementById("results");
+const search = document.getElementById("search");
+const place = document.getElementById("place");
+const statusBox = document.getElementById("status");
+
+function money(value){
+  const n = Number(value || 0);
+
+  if(n >= 1000000){
+    return "$" + (n / 1000000).toFixed(1) + "M";
+  }
+
+  if(n >= 1000){
+    return "$" + (n / 1000).toFixed(0) + "K";
+  }
+
+  return "$" + n.toLocaleString();
 }
-document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");kind=b.dataset.kind;title.textContent=b.textContent;render()});
-document.getElementById("search").oninput=render; document.getElementById("place").onchange=render; render();
+
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function isTarget(signal){
+  const p = String(signal.place || "").toLowerCase().trim();
+
+  return TARGETS.some(target =>
+    p === target ||
+    p.includes(target)
+  );
+}
+
+function render(){
+  const term = search.value.toLowerCase().trim();
+  const selectedPlace = place.value.toLowerCase();
+
+  const filtered = signals.filter(signal => {
+    if(!isTarget(signal)){
+      return false;
+    }
+
+    const signalPlace =
+      String(signal.place || "").toLowerCase();
+
+    if(
+      selectedPlace &&
+      !signalPlace.includes(selectedPlace)
+    ){
+      return false;
+    }
+
+    const haystack = [
+      signal.title,
+      signal.desc,
+      signal.vendor,
+      signal.order,
+      signal.place
+    ].join(" ").toLowerCase();
+
+    return !term || haystack.includes(term);
+  });
+
+  document.getElementById("visibleCount").textContent =
+    filtered.length.toLocaleString();
+
+  const total = filtered.reduce(
+    (sum, signal) =>
+      sum + Number(signal.amount || 0),
+    0
+  );
+
+  document.getElementById("totalSpend").textContent =
+    money(total);
+
+  const locations = new Set(
+    filtered.map(signal => signal.place)
+  );
+
+  document.getElementById("locationCount").textContent =
+    locations.size;
+
+  if(!filtered.length){
+    results.innerHTML =
+      '<div class="empty">No matching spend signals found.</div>';
+    return;
+  }
+
+  results.innerHTML = filtered.map(signal => `
+    <article class="card">
+      <div class="top">
+        <div>
+          <div class="place">
+            ${escapeHtml(signal.place)}
+          </div>
+
+          <div class="title">
+            ${escapeHtml(signal.title)}
+          </div>
+        </div>
+
+        <div class="amount">
+          ${escapeHtml(signal.score)}
+        </div>
+      </div>
+
+      <div class="desc">
+        ${escapeHtml(signal.desc)}
+      </div>
+
+      <div class="meta">
+        ${escapeHtml(signal.meta)}
+      </div>
+
+      ${
+        signal.vendor
+        ? `<div class="vendor">
+             Vendor: ${escapeHtml(signal.vendor)}
+           </div>`
+        : ""
+      }
+
+      <a
+        class="source"
+        href="${escapeHtml(signal.source)}"
+        target="_blank"
+        rel="noopener"
+      >
+        View Virginia source →
+      </a>
+    </article>
+  `).join("");
+}
+
+async function loadData(){
+  try{
+    const response = await fetch(
+      "data/signals.json?ts=" + Date.now()
+    );
+
+    if(!response.ok){
+      throw new Error(
+        "HTTP " + response.status
+      );
+    }
+
+    const data = await response.json();
+
+    signals = Array.isArray(data.signals)
+      ? data.signals
+      : [];
+
+    const targetSignals =
+      signals.filter(isTarget);
+
+    const updated = data.updated
+      ? new Date(data.updated).toLocaleString()
+      : "Unknown";
+
+    statusBox.innerHTML =
+      "<strong>LIVE DATA CONNECTED</strong>" +
+      " · " +
+      targetSignals.length.toLocaleString() +
+      " target-area spend signals loaded" +
+      " · Updated " +
+      escapeHtml(updated);
+
+    render();
+
+  }catch(error){
+    console.error(error);
+
+    statusBox.innerHTML =
+      "<strong>DATA FEED ERROR</strong>" +
+      " · Unable to load data/signals.json";
+
+    results.innerHTML =
+      '<div class="empty">' +
+      'The live data feed could not be loaded.' +
+      '</div>';
+  }
+}
+
+search.addEventListener("input", render);
+place.addEventListener("change", render);
+
+loadData();
 </script>
-</body></html>
+
+</body>
+</html>

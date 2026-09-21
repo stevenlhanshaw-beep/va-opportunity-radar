@@ -10,7 +10,6 @@
 :root{
   --bg:#07111f;
   --card:#0d1b2a;
-  --card2:#12243a;
   --text:#f4f7fb;
   --muted:#9fb0c3;
   --accent:#47d7ac;
@@ -62,6 +61,7 @@ h1{
   border-radius:10px;
   white-space:nowrap;
   font-weight:700;
+  cursor:pointer;
 }
 .tab.active{
   color:#061510;
@@ -140,17 +140,28 @@ input,select{
 }
 .desc{
   color:#d2dce7;
-  line-height:1.45;
+  line-height:1.5;
 }
 .meta{
   margin-top:12px;
   color:var(--muted);
   font-size:13px;
+  line-height:1.5;
 }
 .vendor{
   margin-top:8px;
   font-size:13px;
   color:#c5d3e2;
+}
+.badge{
+  display:inline-block;
+  background:rgba(71,215,172,.12);
+  color:var(--accent);
+  border:1px solid rgba(71,215,172,.35);
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:12px;
+  font-weight:800;
 }
 .source{
   display:inline-block;
@@ -165,7 +176,7 @@ input,select{
   border:1px solid #1c4058;
   border-radius:12px;
   color:#c7d9e7;
-  line-height:1.45;
+  line-height:1.5;
   margin-bottom:18px;
 }
 .empty{
@@ -173,6 +184,7 @@ input,select{
   color:var(--muted);
   padding:35px 10px;
 }
+.hidden{display:none}
 footer{
   color:var(--muted);
   font-size:12px;
@@ -183,7 +195,7 @@ footer{
   .controls{grid-template-columns:1fr}
   .summary{grid-template-columns:1fr 1fr}
   .top{display:block}
-  .amount{margin-top:6px}
+  .amount{margin-top:7px}
 }
 </style>
 </head>
@@ -195,7 +207,7 @@ footer{
 
 <div class="subtitle">
 Public-data intelligence for Southwest Virginia.
-Track government spending patterns and identify where money is moving.
+See government spending patterns and current public opportunities in one place.
 </div>
 
 <div class="status" id="status">
@@ -203,21 +215,26 @@ Track government spending patterns and identify where money is moving.
 </div>
 
 <div class="tabs">
-  <div class="tab active">Spend Signals</div>
-  <div class="tab">Open Opportunities — Coming Soon</div>
-  <div class="tab">Project Signals — Coming Soon</div>
+  <button class="tab active" id="spendTab">
+    Spend Signals
+  </button>
+
+  <button class="tab" id="opportunityTab">
+    Open Opportunities
+  </button>
+
+  <button class="tab" disabled>
+    Project Signals — Coming Soon
+  </button>
 </div>
 
-<div class="notice">
-  <strong>Spend Signals are not open bids.</strong>
-  These records come from Virginia eVA procurement data and show purchasing
-  activity. They can help identify buyers, vendors, categories and recurring
-  spending patterns. Active solicitations will be shown separately when the
-  Open Opportunities feed is added.
-</div>
+<div class="notice" id="notice"></div>
 
 <div class="controls">
-  <input id="search" placeholder="Search buyer, vendor, description or PO…">
+  <input
+    id="search"
+    placeholder="Search buyer, vendor, description or PO…"
+  >
 
   <select id="place">
     <option value="">All target locations</option>
@@ -234,28 +251,28 @@ Track government spending patterns and identify where money is moving.
 
 <div class="summary">
   <div class="metric">
-    <div class="number" id="visibleCount">0</div>
-    <div class="label">Signals shown</div>
+    <div class="number" id="metric1">0</div>
+    <div class="label" id="label1">Signals shown</div>
   </div>
 
   <div class="metric">
-    <div class="number" id="totalSpend">$0</div>
-    <div class="label">Spend represented</div>
+    <div class="number" id="metric2">$0</div>
+    <div class="label" id="label2">Spend represented</div>
   </div>
 
   <div class="metric">
-    <div class="number" id="locationCount">0</div>
-    <div class="label">Target locations</div>
+    <div class="number" id="metric3">0</div>
+    <div class="label" id="label3">Target locations</div>
   </div>
 </div>
 
 <div class="grid" id="results"></div>
 
 <footer>
-  Data source: Commonwealth of Virginia eVA procurement data.
-  VA Opportunity Radar is an independent public-data research tool and is not
-  affiliated with the Commonwealth of Virginia. Dollar amounts shown are
-  procurement-record amounts, not estimates of future opportunity value.
+VA Opportunity Radar is an independent public-data research tool
+and is not affiliated with the Commonwealth of Virginia or the
+local governments represented here. Always verify solicitation
+requirements and deadlines with the official source before acting.
 </footer>
 
 </div>
@@ -273,11 +290,27 @@ const TARGETS = [
 ];
 
 let signals = [];
+let opportunities = [];
+let mode = "spend";
 
 const results = document.getElementById("results");
 const search = document.getElementById("search");
 const place = document.getElementById("place");
 const statusBox = document.getElementById("status");
+const notice = document.getElementById("notice");
+
+const spendTab = document.getElementById("spendTab");
+const opportunityTab =
+  document.getElementById("opportunityTab");
+
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
 
 function money(value){
   const n = Number(value || 0);
@@ -293,27 +326,72 @@ function money(value){
   return "$" + n.toLocaleString();
 }
 
-function escapeHtml(value){
-  return String(value ?? "")
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
 function isTarget(signal){
-  const p = String(signal.place || "").toLowerCase().trim();
+  const p =
+    String(signal.place || "")
+      .toLowerCase()
+      .trim();
 
   return TARGETS.some(target =>
-    p === target ||
-    p.includes(target)
+    p === target || p.includes(target)
   );
 }
 
+function setMode(newMode){
+  mode = newMode;
+
+  spendTab.classList.toggle(
+    "active",
+    mode === "spend"
+  );
+
+  opportunityTab.classList.toggle(
+    "active",
+    mode === "opportunity"
+  );
+
+  search.value = "";
+  place.value = "";
+
+  if(mode === "spend"){
+    search.placeholder =
+      "Search buyer, vendor, description or PO…";
+
+    notice.innerHTML =
+      "<strong>Spend Signals are not open bids.</strong> " +
+      "These records come from Virginia eVA procurement " +
+      "data and show purchasing activity. They can help " +
+      "identify buyers, vendors, categories and recurring " +
+      "spending patterns.";
+
+  }else{
+    search.placeholder =
+      "Search opportunity, agency or solicitation…";
+
+    notice.innerHTML =
+      "<strong>Open Opportunities</strong> are public " +
+      "solicitations reported as open by the source. " +
+      "Always open the official notice to verify current " +
+      "status, requirements and closing information.";
+  }
+
+  render();
+}
+
 function render(){
-  const term = search.value.toLowerCase().trim();
-  const selectedPlace = place.value.toLowerCase();
+  if(mode === "spend"){
+    renderSpend();
+  }else{
+    renderOpportunities();
+  }
+}
+
+function renderSpend(){
+  const term =
+    search.value.toLowerCase().trim();
+
+  const selectedPlace =
+    place.value.toLowerCase();
 
   const filtered = signals.filter(signal => {
     if(!isTarget(signal)){
@@ -341,8 +419,11 @@ function render(){
     return !term || haystack.includes(term);
   });
 
-  document.getElementById("visibleCount").textContent =
+  document.getElementById("metric1").textContent =
     filtered.length.toLocaleString();
+
+  document.getElementById("label1").textContent =
+    "Signals shown";
 
   const total = filtered.reduce(
     (sum, signal) =>
@@ -350,24 +431,32 @@ function render(){
     0
   );
 
-  document.getElementById("totalSpend").textContent =
+  document.getElementById("metric2").textContent =
     money(total);
 
-  const locations = new Set(
-    filtered.map(signal => signal.place)
-  );
+  document.getElementById("label2").textContent =
+    "Spend represented";
 
-  document.getElementById("locationCount").textContent =
+  const locations =
+    new Set(filtered.map(x => x.place));
+
+  document.getElementById("metric3").textContent =
     locations.size;
+
+  document.getElementById("label3").textContent =
+    "Target locations";
 
   if(!filtered.length){
     results.innerHTML =
-      '<div class="empty">No matching spend signals found.</div>';
+      '<div class="empty">' +
+      'No matching spend signals found.' +
+      '</div>';
     return;
   }
 
   results.innerHTML = filtered.map(signal => `
     <article class="card">
+
       <div class="top">
         <div>
           <div class="place">
@@ -408,61 +497,227 @@ function render(){
       >
         View Virginia source →
       </a>
+
+    </article>
+  `).join("");
+}
+
+function renderOpportunities(){
+  const term =
+    search.value.toLowerCase().trim();
+
+  const selectedPlace =
+    place.value.toLowerCase();
+
+  const filtered =
+    opportunities.filter(item => {
+
+      const itemPlace =
+        String(item.place || "").toLowerCase();
+
+      if(
+        selectedPlace &&
+        !itemPlace.includes(selectedPlace)
+      ){
+        return false;
+      }
+
+      const haystack = [
+        item.title,
+        item.agency,
+        item.solicitation,
+        item.category,
+        item.desc,
+        item.place
+      ].join(" ").toLowerCase();
+
+      return !term || haystack.includes(term);
+    });
+
+  document.getElementById("metric1").textContent =
+    filtered.length.toLocaleString();
+
+  document.getElementById("label1").textContent =
+    "Open opportunities";
+
+  document.getElementById("metric2").textContent =
+    new Set(
+      filtered.map(x => x.agency)
+    ).size;
+
+  document.getElementById("label2").textContent =
+    "Public agencies";
+
+  document.getElementById("metric3").textContent =
+    new Set(
+      filtered.map(x => x.place)
+    ).size;
+
+  document.getElementById("label3").textContent =
+    "Locations";
+
+  if(!filtered.length){
+    results.innerHTML =
+      '<div class="empty">' +
+      'No matching open opportunities found.' +
+      '</div>';
+    return;
+  }
+
+  results.innerHTML = filtered.map(item => `
+    <article class="card">
+
+      <div class="top">
+        <div>
+          <div class="place">
+            ${escapeHtml(item.place)}
+          </div>
+
+          <div class="title">
+            ${escapeHtml(item.title)}
+          </div>
+        </div>
+
+        <div class="badge">
+          ${escapeHtml(item.status || "Open")}
+        </div>
+      </div>
+
+      <div class="desc">
+        ${escapeHtml(
+          item.desc || "See official solicitation."
+        )}
+      </div>
+
+      <div class="meta">
+        <strong>Agency:</strong>
+        ${escapeHtml(item.agency)}
+        <br>
+
+        <strong>Solicitation:</strong>
+        ${escapeHtml(
+          item.solicitation || "Not listed"
+        )}
+        <br>
+
+        <strong>Published:</strong>
+        ${escapeHtml(
+          item.published || "Not listed"
+        )}
+        <br>
+
+        <strong>Closing:</strong>
+        ${escapeHtml(
+          item.closing || "See official notice"
+        )}
+      </div>
+
+      <a
+        class="source"
+        href="${escapeHtml(item.source)}"
+        target="_blank"
+        rel="noopener"
+      >
+        View official opportunity →
+      </a>
+
     </article>
   `).join("");
 }
 
 async function loadData(){
   try{
-    const response = await fetch(
-      "data/signals.json?ts=" + Date.now()
-    );
+    const stamp = Date.now();
 
-    if(!response.ok){
+    const [spendResponse, opportunityResponse] =
+      await Promise.all([
+        fetch(
+          "data/signals.json?ts=" + stamp
+        ),
+        fetch(
+          "data/opportunities.json?ts=" + stamp
+        )
+      ]);
+
+    if(!spendResponse.ok){
       throw new Error(
-        "HTTP " + response.status
+        "Spend feed HTTP " +
+        spendResponse.status
       );
     }
 
-    const data = await response.json();
+    if(!opportunityResponse.ok){
+      throw new Error(
+        "Opportunity feed HTTP " +
+        opportunityResponse.status
+      );
+    }
 
-    signals = Array.isArray(data.signals)
-      ? data.signals
+    const spendData =
+      await spendResponse.json();
+
+    const opportunityData =
+      await opportunityResponse.json();
+
+    signals =
+      Array.isArray(spendData.signals)
+      ? spendData.signals
+      : [];
+
+    opportunities =
+      Array.isArray(
+        opportunityData.opportunities
+      )
+      ? opportunityData.opportunities
       : [];
 
     const targetSignals =
       signals.filter(isTarget);
 
-    const updated = data.updated
-      ? new Date(data.updated).toLocaleString()
-      : "Unknown";
-
     statusBox.innerHTML =
       "<strong>LIVE DATA CONNECTED</strong>" +
       " · " +
       targetSignals.length.toLocaleString() +
-      " target-area spend signals loaded" +
-      " · Updated " +
-      escapeHtml(updated);
+      " spend signals" +
+      " · " +
+      opportunities.length.toLocaleString() +
+      " open opportunities";
 
-    render();
+    setMode("spend");
 
   }catch(error){
     console.error(error);
 
     statusBox.innerHTML =
       "<strong>DATA FEED ERROR</strong>" +
-      " · Unable to load data/signals.json";
+      " · One or more live feeds could not load.";
 
     results.innerHTML =
       '<div class="empty">' +
-      'The live data feed could not be loaded.' +
+      'Live data could not be loaded.' +
       '</div>';
   }
 }
 
-search.addEventListener("input", render);
-place.addEventListener("change", render);
+spendTab.addEventListener(
+  "click",
+  () => setMode("spend")
+);
+
+opportunityTab.addEventListener(
+  "click",
+  () => setMode("opportunity")
+);
+
+search.addEventListener(
+  "input",
+  render
+);
+
+place.addEventListener(
+  "change",
+  render
+);
 
 loadData();
 </script>

@@ -1,3 +1,4 @@
+
 import json
 import os
 import re
@@ -6,7 +7,21 @@ from datetime import datetime, timezone
 from html import unescape
 from html.parser import HTMLParser
 
-SOURCE_URL = "https://www.salemva.gov/Bids.aspx"
+
+SOURCES = [
+    {
+        "place": "Salem",
+        "agency": "City of Salem",
+        "base": "https://www.salemva.gov",
+        "index": "https://www.salemva.gov/Bids.aspx",
+    },
+    {
+        "place": "Christiansburg",
+        "agency": "Town of Christiansburg",
+        "base": "https://www.christiansburg.org",
+        "index": "https://www.christiansburg.org/bids.aspx",
+    },
+]
 
 
 class TextParser(HTMLParser):
@@ -20,8 +35,9 @@ class TextParser(HTMLParser):
             self.skip_depth += 1
 
     def handle_endtag(self, tag):
-        if tag.lower() in ("script", "style") and self.skip_depth:
-            self.skip_depth -= 1
+        if tag.lower() in ("script", "style"):
+            if self.skip_depth:
+                self.skip_depth -= 1
 
     def handle_data(self, data):
         if self.skip_depth:
@@ -42,7 +58,10 @@ def get_html(url):
         },
     )
 
-    with urllib.request.urlopen(req, timeout=60) as response:
+    with urllib.request.urlopen(
+        req,
+        timeout=60
+    ) as response:
         return response.read().decode(
             "utf-8",
             errors="replace"
@@ -115,10 +134,11 @@ def grab(text, start, ends):
     return clean_text(value[:stop])
 
 
-def parse_bid(bid_id):
+def parse_bid(source, bid_id):
     url = (
-        "https://www.salemva.gov/"
-        f"bids.aspx?bidID={bid_id}"
+        source["base"]
+        + "/bids.aspx?bidID="
+        + str(bid_id)
     )
 
     html = get_html(url)
@@ -202,8 +222,8 @@ def parse_bid(bid_id):
 
     return {
         "kind": "opportunity",
-        "place": "Salem",
-        "agency": "City of Salem",
+        "place": source["place"],
+        "agency": source["agency"],
         "title": title,
         "solicitation": number,
         "category": category,
@@ -215,32 +235,38 @@ def parse_bid(bid_id):
     }
 
 
-def main():
+def collect_source(source):
     print(
-        "Checking City of Salem "
+        "Checking",
+        source["agency"],
         "open solicitations..."
     )
 
-    index_html = get_html(SOURCE_URL)
-    bid_ids = extract_bid_ids(index_html)
+    html = get_html(source["index"])
+    bid_ids = extract_bid_ids(html)
 
     print(
         "Found",
         len(bid_ids),
-        "bid links"
+        "bid links for",
+        source["agency"]
     )
 
     opportunities = []
 
     for bid_id in bid_ids:
         try:
-            item = parse_bid(bid_id)
+            item = parse_bid(
+                source,
+                bid_id
+            )
 
             if item:
                 opportunities.append(item)
 
                 print(
                     "OPEN:",
+                    source["place"],
                     item["solicitation"],
                     "-",
                     item["title"]
@@ -248,14 +274,55 @@ def main():
 
         except Exception as exc:
             print(
-                "Skipped bid",
+                "Skipped",
+                source["place"],
+                "bid",
                 bid_id,
                 ":",
                 exc
             )
 
+    return opportunities
+
+
+def main():
+    opportunities = []
+    source_results = []
+
+    for source in SOURCES:
+        try:
+            items = collect_source(source)
+
+            opportunities.extend(items)
+
+            source_results.append({
+                "agency": source["agency"],
+                "place": source["place"],
+                "source": source["index"],
+                "count": len(items),
+                "status": "ok",
+            })
+
+        except Exception as exc:
+            print(
+                "Source failed:",
+                source["agency"],
+                ":",
+                exc
+            )
+
+            source_results.append({
+                "agency": source["agency"],
+                "place": source["place"],
+                "source": source["index"],
+                "count": 0,
+                "status": "error",
+                "error": str(exc),
+            })
+
     opportunities.sort(
         key=lambda item: (
+            item["place"].lower(),
             item["title"].lower(),
             item["solicitation"]
         )
@@ -265,8 +332,8 @@ def main():
         "updated": datetime.now(
             timezone.utc
         ).isoformat(),
-        "source": SOURCE_URL,
         "count": len(opportunities),
+        "sources": source_results,
         "opportunities": opportunities,
     }
 

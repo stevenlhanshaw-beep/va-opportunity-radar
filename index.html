@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>VA Opportunity Radar</title>
+<style>
+:root{--bg:#07111f;--card:#0d1b2a;--line:#20344c;--text:#eef6ff;--muted:#9fb2c8;--green:#57d3a0;--blue:#62a8ff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(180deg,#07111f,#0a1626);color:var(--text)}
+.wrap{max-width:1050px;margin:auto;padding:24px 17px 64px}header{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:34px}.brand{font-weight:850}.badge{font-size:11px;border:1px solid #275c4b;color:#8ff0c4;padding:7px 9px;border-radius:99px;background:#0c2a22}
+.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.12em}.hero h1{font-size:clamp(40px,8vw,74px);line-height:.98;margin:14px 0;letter-spacing:-2.5px}.lead{max-width:740px;color:var(--muted);font-size:18px;line-height:1.55}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 18px}.tab{appearance:none;background:transparent;color:var(--muted);border:1px solid var(--line);padding:10px 13px;border-radius:10px;font-weight:650}.tab.active{background:#143250;color:#fff;border-color:#2d6595}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.filters input,.filters select{background:#0b1726;color:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-width:160px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat,.card{background:rgba(13,27,42,.92);border:1px solid var(--line);border-radius:16px;padding:17px}.stat b{font-size:26px;display:block}.stat span,.small{color:var(--muted);font-size:13px}
+.section{margin-top:30px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px}.section h2{font-size:22px;margin-bottom:12px}.cards{display:grid;gap:11px}.card{display:grid;grid-template-columns:1fr auto;gap:14px}.tag{display:inline-block;font-size:11px;padding:5px 8px;border-radius:7px;background:#132c42;color:#9bcaff;margin:0 5px 4px 0}.score{font-size:21px;font-weight:850;color:var(--green);text-align:right}.card h3{margin:7px 0 6px;font-size:17px}.card p{margin:0;color:var(--muted);line-height:1.45}.meta{margin-top:10px;color:#c2d1e2;font-size:12px}.note{margin-top:26px;padding:15px;border-left:3px solid var(--blue);background:#0d1b2a;color:var(--muted);font-size:14px;line-height:1.5}.hidden{display:none}
+footer{margin-top:35px;color:#6f859d;font-size:12px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.card{grid-template-columns:1fr}.score{text-align:left}.filters>*{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">◉ VA Opportunity Radar</div><div class="badge">PUBLIC DATA INTELLIGENCE</div></header>
+<section class="hero">
+<div class="eyebrow">SOUTHWEST VIRGINIA • PROTOTYPE</div>
+<h1>See where Virginia<br>money is moving.</h1>
+<p class="lead">Procurement activity, buyer patterns, active-opportunity placeholders and project signals—kept separate so historical purchases are never presented as open bids.</p>
+</section>
+
+<div class="tabs">
+<button class="tab active" data-kind="spend">Spend Signals</button>
+<button class="tab" data-kind="open">Open Opportunities</button>
+<button class="tab" data-kind="project">Project Signals</button>
+</div>
+<div class="filters">
+<input id="search" placeholder="Search signals">
+<select id="place"><option value="">All target locations</option><option>Roanoke</option><option>Salem</option><option>Blacksburg</option><option>Christiansburg</option><option>Radford</option><option>Pulaski</option><option>Wytheville</option></select>
+</div>
+
+<div class="grid">
+<div class="stat"><b>eVA</b><span>2026 procurement data source identified</span></div>
+<div class="stat"><b>SWVA</b><span>Roanoke → New River → Wythe corridor</span></div>
+<div class="stat"><b>3 layers</b><span>Spend • Open • Project signals</span></div>
+</div>
+
+<section class="section">
+<div class="section-head"><h2 id="sectionTitle">Spend Signals</h2><div class="small" id="count"></div></div>
+<div id="cards" class="cards"></div>
+</section>
+
+<div class="note"><strong>Data rule:</strong> eVA purchase-order history is a <em>spend signal</em>, not an active bid. Open opportunities will only appear when a source explicitly supports active solicitation status. Project signals will come from public permit/project sources.</div>
+<footer>VA Opportunity Radar • early validation build • no paid hosting required</footer>
+</div>
+<script>
+const data = [
+ {kind:"spend",place:"Roanoke",tags:["BUYER ACTIVITY","PROCUREMENT"],title:"Recurring buyer activity",desc:"Groups eVA purchase-order lines by order, buyer and commodity so repeat purchasing patterns can be surfaced.",meta:"Source layer: eVA Procurement Data 2026",score:"Spend"},
+ {kind:"spend",place:"Wytheville",tags:["LOCAL","GEOGRAPHY"],title:"Southwest Virginia spend filter",desc:"Uses shipping city/postal, entity and commodity fields to focus on the Roanoke, New River Valley and Wythe corridor.",meta:"Location shown here is a prototype filter example",score:"Local"},
+ {kind:"spend",place:"Blacksburg",tags:["VENDOR","CATEGORY"],title:"Vendor and commodity patterns",desc:"Tracks vendor, NIGP description, transaction type, order status and line totals without inventing missing values.",meta:"Historical/current purchasing intelligence",score:"Pattern"},
+ {kind:"open",place:"Roanoke",tags:["ACTIVE SOLICITATION","SOURCE REQUIRED"],title:"Open-opportunity feed",desc:"This layer is intentionally not populated with purchase orders. It will contain only records verified by an active-solicitation source.",meta:"Next source integration",score:"Next"},
+ {kind:"project",place:"Roanoke",tags:["PERMIT","PROJECT THREAD"],title:"Permit and project signals",desc:"Public permit/project records can be clustered with related activity to reveal projects earlier than a single-record view.",meta:"Initial target: Roanoke public permit/project system",score:"Next"},
+ {kind:"project",place:"Salem",tags:["CLUSTERING","INFERENCE LABELED"],title:"Related-record clustering",desc:"Electrical, mechanical, building and occupancy records can be grouped when evidence supports a common project; inferred links stay labeled as inference.",meta:"Project-thread feature",score:"Thread"}
+];
+let kind="spend";
+const cards=document.getElementById("cards"), title=document.getElementById("sectionTitle"), count=document.getElementById("count");
+function render(){
+ const q=document.getElementById("search").value.toLowerCase(), p=document.getElementById("place").value;
+ const rows=data.filter(x=>x.kind===kind && (!p||x.place===p) && (x.title+" "+x.desc+" "+x.tags.join(" ")).toLowerCase().includes(q));
+ cards.innerHTML=rows.length?rows.map(x=>`<article class="card"><div>${x.tags.map(t=>`<span class="tag">${t}</span>`).join("")}<h3>${x.title}</h3><p>${x.desc}</p><div class="meta">${x.place} • ${x.meta}</div></div><div class="score">${x.score}</div></article>`).join(""):`<article class="card"><div><h3>No matching signals yet</h3><p>Change the filter or wait until this source layer is connected.</p></div></article>`;
+ count.textContent=rows.length+" shown";
+}
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");kind=b.dataset.kind;title.textContent=b.textContent;render()});
+document.getElementById("search").oninput=render; document.getElementById("place").onchange=render; render();
+</script>
+</body></html>

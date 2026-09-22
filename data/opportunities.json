@@ -1,8 +1,62 @@
 {
-  "updated": "2026-09-21T16:48:29.298227+00:00",
-  "source": "https://www.salemva.gov/Bids.aspx",
-  "count": 6,
+  "updated": "2026-09-22T10:30:12.269996+00:00",
+  "count": 9,
+  "sources": [
+    {
+      "agency": "City of Salem",
+      "place": "Salem",
+      "source": "https://www.salemva.gov/Bids.aspx",
+      "count": 6,
+      "status": "ok"
+    },
+    {
+      "agency": "Town of Christiansburg",
+      "place": "Christiansburg",
+      "source": "https://www.christiansburg.org/bids.aspx",
+      "count": 3,
+      "status": "ok"
+    }
+  ],
   "opportunities": [
+    {
+      "kind": "opportunity",
+      "place": "Christiansburg",
+      "agency": "Town of Christiansburg",
+      "title": "27500007 IFB North Franklin Sidewalk In-Fill Project",
+      "solicitation": "27500007",
+      "category": "Bid / RFP Opportunities",
+      "status": "Open",
+      "published": "8/26/2026 12:00 AM",
+      "closing": "9/29/2026 3:00 PM",
+      "desc": "Town of Christiansburg Christiansburg, VA North Franklin Street Sidewalk In-fill Project ADVERTISEMENT FOR BIDS Sealed Bids for the construction of North Franklin Street Sidewalk In-fill Project will be received by THE TOWN OF CHRISTIANSBURG at the office of the PROCUREMENT OFFICER , until 3:00 PM local time on September 29 th , 2026 , at which time the Bids received will be publicly opened and read. The Project consists of sidewalk and curb ramp improvements meeting ADA standards, asphalt mi...",
+      "source": "https://www.christiansburg.org/bids.aspx?bidID=901"
+    },
+    {
+      "kind": "opportunity",
+      "place": "Christiansburg",
+      "agency": "Town of Christiansburg",
+      "title": "27500008 RFP Utility On-Call Engineering Services",
+      "solicitation": "27500008",
+      "category": "Bid / RFP Opportunities",
+      "status": "Open",
+      "published": "9/4/2026 12:00 AM",
+      "closing": "10/7/2026 3:00 PM",
+      "desc": "Notice of Request for Proposals Town of Christiansburg Purchasing Office 100 East Main Street Christiansburg, VA 24073 September 4, 2026 RFP #27500008 Professional Services for Utility On-Call Engineering Services The Town of Christiansburg is seeking Expressions of Interest from qualified consulting engineering firms to provide professional engineering term services for potable water distribution, wastewater collection and pumping, wastewater treatment, and programmatic/compliance assistance...",
+      "source": "https://www.christiansburg.org/bids.aspx?bidID=905"
+    },
+    {
+      "kind": "opportunity",
+      "place": "Christiansburg",
+      "agency": "Town of Christiansburg",
+      "title": "Public Notice: Surplus Brick Dust Available for Sale",
+      "solicitation": "",
+      "category": "Bid / RFP Opportunities",
+      "status": "Open",
+      "published": "1/1/2021 12:00 AM",
+      "closing": "Open Until Contracted",
+      "desc": "The Town of Christiansburg will make surplus brick dust available for sale to the general public at $50.00 for a 2-yard bucket (approximately 2 tons) at the Town Public Works complex at 300 Scattergood Drive, N.W., Christiansburg, VA 24073. The Town will load the surplus in 2-yard increments Monday through Friday, excluding Town holidays 8:30 a.m. until 4 p.m. with 48-hour notice. Contact April Overby at (540) 382-1151 x 6005 to schedule loading. There is no scale system on-site and the Town...",
+      "source": "https://www.christiansburg.org/bids.aspx?bidID=104"
+    },
     {
       "kind": "opportunity",
       "place": "Salem",

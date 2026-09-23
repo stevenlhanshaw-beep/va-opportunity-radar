@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-22T10:30:02.439657+00:00",
+  "updated": "2026-09-23T10:29:14.431887+00:00",
   "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca",
   "record_count": 12812,
-  "count": 4475,
+  "count": 4468,
   "signals": [
     {
       "kind": "spend",
@@ -774,18 +774,6 @@
     },
     {
       "kind": "spend",
-      "place": "Colonial Heights",
-      "title": "Virginia Department of Transportation",
-      "desc": "MAINTENANCE CONSULTING",
-      "meta": "eVA order PO04437338-V2 • 2026-03-20",
-      "score": "$753,949",
-      "amount": 753949.0,
-      "order": "PO04437338-V2",
-      "vendor": "PILLAR Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
       "place": "Virginia Beach",
       "title": "Jones & Cabacoy Veterans Care Center",
       "desc": "Blanket order for US Foods for foods products not available from VDC.",
@@ -1351,18 +1339,6 @@
     {
       "kind": "spend",
       "place": "Richmond",
-      "title": "Virginia Department of Transportation",
-      "desc": "MAINTENANCE CONSULTING",
-      "meta": "eVA order PO04432966-V3 • 2025-08-26",
-      "score": "$355,456",
-      "amount": 355455.76,
-      "order": "PO04432966-V3",
-      "vendor": "PILLAR Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Richmond",
       "title": "Department of Forensic Science",
       "desc": "Non-Professional Construction Related Services; Special Inspections and Construction Observation and Testing in accordance to Scope of Work.   Our objective is to provide observation and testing services to support the construction of the proposed  project.; Task 04: Evaluation of the floor flatness",
       "meta": "eVA order PO04178383-V3 • 2026-04-09",
@@ -1442,6 +1418,18 @@
       "amount": 299620.99,
       "order": "PO03660511-V3",
       "vendor": "VA POLYTECHNIC INSTITUTE & STATE UNIV",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Roanoke",
+      "title": "Virginia Department of Transportation",
+      "desc": "Concrete Bucket, minimum 1 cubic yard; Rubber Tire Loader 110 HP Plus 2 Yard Bucket with Experienced Operator; Motorgrader 135 HP minimum with Experienced Operator",
+      "meta": "eVA order PO04997956-V5 • 2026-02-27",
+      "score": "$299,539",
+      "amount": 299539.03,
+      "order": "PO04997956-V5",
+      "vendor": "L A S TRUCKING AND CONSTRUCTION INC",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -1562,18 +1550,6 @@
       "amount": 271590.0,
       "order": "PO05085555",
       "vendor": "VA POLYTECHNIC INSTITUTE & STATE UNIV",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Roanoke",
-      "title": "Virginia Department of Transportation",
-      "desc": "Concrete Bucket, minimum 1 cubic yard; Rubber Tire Loader 110 HP Plus 2 Yard Bucket with Experienced Operator; Motorgrader 135 HP minimum with Experienced Operator",
-      "meta": "eVA order PO04997956-V5 • 2026-02-27",
-      "score": "$270,839",
-      "amount": 270838.63,
-      "order": "PO04997956-V5",
-      "vendor": "L A S TRUCKING AND CONSTRUCTION INC",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -2082,6 +2058,18 @@
     },
     {
       "kind": "spend",
+      "place": "Glen Allen",
+      "title": "Department of Social Services",
+      "desc": "Office Rent - Domestic Violence Prevention and Services - Family Resource Center; Office & Program - Domestic Violence Prevention and Services - Family Resource Center; Equipment - Domestic Violence Prevention and Services - Family Resource Center",
+      "meta": "eVA order PO05100603 • 2025-08-15",
+      "score": "$165,960",
+      "amount": 165960.0,
+      "order": "PO05100603",
+      "vendor": "Family Resource Center Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
       "place": "Salem",
       "title": "Virginia Department of Transportation",
       "desc": "LEAD PAINTER; PAINTER'S HELPER; Mileage - Paid at State Rate - IV.A.10.b",
@@ -2126,18 +2114,6 @@
       "amount": 152460.0,
       "order": "PO05384670",
       "vendor": "PILLAR Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Glen Allen",
-      "title": "Department of Social Services",
-      "desc": "Office Rent - Domestic Violence Prevention and Services - Family Resource Center; Office & Program - Domestic Violence Prevention and Services - Family Resource Center; Equipment - Domestic Violence Prevention and Services - Family Resource Center",
-      "meta": "eVA order PO05100603 • 2025-08-15",
-      "score": "$150,892",
-      "amount": 150892.18,
-      "order": "PO05100603",
-      "vendor": "Family Resource Center Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -3002,6 +2978,30 @@
       "amount": 93499.0,
       "order": "PO04717179-V3",
       "vendor": "PILLAR Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Blacksburg",
+      "title": "Virginia Polytechnic Institute and State University",
+      "desc": "-Building and Grounds Boiler Replacement",
+      "meta": "eVA order A208_P4637392 • 2025-07-07",
+      "score": "$93,407",
+      "amount": 93407.0,
+      "order": "A208_P4637392",
+      "vendor": "Johnson Controls Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Christiansburg",
+      "title": "Virginia Department of Transportation",
+      "desc": "CRUSHED GRADE 26; NO. 68 STONE",
+      "meta": "eVA order PO05273069-V4 • 2026-06-08",
+      "score": "$91,804",
+      "amount": 91804.0,
+      "order": "PO05273069-V4",
+      "vendor": "Salem Stone Corporation",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     }
   ]

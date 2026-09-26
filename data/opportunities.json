@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-25T10:30:05.052549+00:00",
-  "count": 10,
+  "updated": "2026-09-26T10:28:12.981060+00:00",
+  "count": 11,
   "sources": [
     {
       "agency": "City of Salem",
@@ -13,7 +13,7 @@
       "agency": "Town of Christiansburg",
       "place": "Christiansburg",
       "source": "https://www.christiansburg.org/bids.aspx",
-      "count": 4,
+      "count": 5,
       "status": "ok"
     }
   ],
@@ -43,6 +43,19 @@
       "closing": "10/8/2026 3:00 PM",
       "desc": "Town of Christiansburg Christiansburg, VA North Franklin Street Sidewalk In-fill Project ADVERTISEMENT FOR BIDS Sealed Bids for the construction of North Franklin Street Sidewalk In-fill Project will be received by THE TOWN OF CHRISTIANSBURG at the office of the PROCUREMENT OFFICER , until 3:00 PM local time on September 29 th , 2026 , at which time the Bids received will be publicly opened and read. The Project consists of sidewalk and curb ramp improvements meeting ADA standards, asphalt mi...",
       "source": "https://www.christiansburg.org/bids.aspx?bidID=901"
+    },
+    {
+      "kind": "opportunity",
+      "place": "Christiansburg",
+      "agency": "Town of Christiansburg",
+      "title": "27500008 RFP Addendum 1 Utility On-Call Engineering Services",
+      "solicitation": "27500008",
+      "category": "Bid / RFP Opportunities",
+      "status": "Open",
+      "published": "9/25/2026 12:00 AM",
+      "closing": "10/7/2026 3:00 PM Addendum Date/Time: 09/25/2026",
+      "desc": "Town of Christiansburg Purchasing Office 100 East Main Street Christiansburg, VA 24073 ADDENDUM #1 September 25, 2026 RFP 27500008 – Utility On-Call Engineering Services This Addendum #1 amends or supplements RFP 27500008 – Utility On-Call Engineering Services as indicated below: To provide clarification on questions received All other terms, conditions, and descriptions in the RFP remain the same. The due date and hour remains Wednesday, October 7, 2026, at 3:00 p.m. local time . A signed ac...",
+      "source": "https://www.christiansburg.org/bids.aspx?bidID=911"
     },
     {
       "kind": "opportunity",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T10:32:26.178812+00:00",
+  "updated": "2026-09-29T10:32:44.580325+00:00",
   "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca",
   "record_count": 12812,
   "count": 4464,
@@ -2334,18 +2334,6 @@
     },
     {
       "kind": "spend",
-      "place": "North Chesterfield",
-      "title": "Virginia State Police",
-      "desc": "A/E Services for STARS Hall Road Site - Design Phase Services IAW:    Proposal dated 1/21/26 for A/E Services to Design and Construct   Virginia State Police Communication Tower Sites   Hall Road Site   T&L Project No. 018755.02; A/E Services for STARS Hall Road Site - Bidding & Construction Phase S",
-      "meta": "eVA order PO05256156 • 2026-02-12",
-      "score": "$133,428",
-      "amount": 133428.0,
-      "order": "PO05256156",
-      "vendor": "Thompson and Litton Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
       "place": "Christiansburg",
       "title": "Virginia Department of Transportation",
       "desc": "CRUSHED GRADE 26; NO. 78 STONE; STONE 8 P MIN. GRADE B",
@@ -3002,6 +2990,18 @@
       "amount": 89950.0,
       "order": "PO04910672-V2",
       "vendor": "Schnabel Engineering, LLC",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Bristol",
+      "title": "Virginia Department of Transportation",
+      "desc": "MAINTENANCE CONSULTING",
+      "meta": "eVA order PO03605857-V2 • 2026-05-18",
+      "score": "$89,069",
+      "amount": 89068.75,
+      "order": "PO03605857-V2",
+      "vendor": "PILLAR Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     }
   ]

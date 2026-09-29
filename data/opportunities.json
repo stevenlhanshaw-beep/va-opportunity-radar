@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-28T10:32:39.328671+00:00",
-  "count": 11,
+  "updated": "2026-09-29T10:32:51.321868+00:00",
+  "count": 9,
   "sources": [
     {
       "agency": "City of Salem",
       "place": "Salem",
       "source": "https://www.salemva.gov/Bids.aspx",
-      "count": 6,
+      "count": 4,
       "status": "ok"
     },
     {
@@ -134,32 +134,6 @@
       "closing": "Open Until Contracted",
       "desc": "LEGAL PUBLICATION NOTICE CITY OF SALEM, VIRGINIA REQUEST FOR PROPOSAL (RFP) RFP #2026-009 – Hotel Market Study and Feasibility Analysis The City of Salem, Virginia, is soliciting sealed proposals from qualified firms or individuals to provide consulting services for a comprehensive Hotel Market Study and Feasibility Analysis. The scope of services includes a community-wide market evaluation, demand analysis, facility and site recommendations, and a financial feasibility analysis for potential...",
       "source": "https://www.salemva.gov/bids.aspx?bidID=87"
-    },
-    {
-      "kind": "opportunity",
-      "place": "Salem",
-      "agency": "City of Salem",
-      "title": "Howard and Jackson Drive Waterline Replacement",
-      "solicitation": "2026-030",
-      "category": "Bid Opportunities",
-      "status": "Open",
-      "published": "6/22/2026 12:00 AM",
-      "closing": "Open Until Contracted",
-      "desc": "CITY OF SALEM, VA CITY OF SALEM - PURCHASING DEPARTMENT 114 N. BROAD STREET SALEM, VIRGINIA 24153 HOWARD DRIVE AND JACKSON DRIVE WATERLINE REPLACEMENT General Notice City of Salem (Owner) is requesting Bids for the construction of the following Project: Howard Drive and Jackson Drive Waterline Replacement. Bids for the construction of the Project will be received at the Salem Purchasing Department located at 114 N. Broad Street, Salem, VA 24153, until July 30, 2026, at 3:00 P.M. local time. B...",
-      "source": "https://www.salemva.gov/bids.aspx?bidID=86"
-    },
-    {
-      "kind": "opportunity",
-      "place": "Salem",
-      "agency": "City of Salem",
-      "title": "Upper Roanoke River Sanitary Sewer Rehabilitation Project",
-      "solicitation": "2026-001",
-      "category": "Bid Opportunities",
-      "status": "Open",
-      "published": "6/17/2026 12:00 AM",
-      "closing": "Open Until Contracted",
-      "desc": "CITY OF SALEM, VIRGINIA ADVERTISEMENT FOR BIDS Invitation to Bid #2026-001 — Upper Roanoke River Sanitary Sewer Rehabilitation Project Sealed Bids for the construction of the Upper Roanoke River Sanitary Sewer Rehabilitation Project will be received by the City of Salem Purchasing Department, 114 North Broad Street, Salem, Virginia 24153, by hand delivery, mail, or electronic submission through eVA, until 10:00 a.m. (Local Time) on Friday, July 24, 2026. Faxed or emailed bids will not be cons...",
-      "source": "https://www.salemva.gov/bids.aspx?bidID=85"
     }
   ]
 }

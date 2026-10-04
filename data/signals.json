@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-03T10:33:24.215429+00:00",
+  "updated": "2026-10-04T16:54:23.156841+00:00",
   "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca",
   "record_count": 12812,
-  "count": 4464,
+  "count": 4463,
   "signals": [
     {
       "kind": "spend",
@@ -1818,18 +1818,6 @@
     },
     {
       "kind": "spend",
-      "place": "Eva",
-      "title": "DOC - Architecture and Engineering",
-      "desc": "Engineering Design; Bidding Assistance; ARCHITECTURAL SERVICES, PROFESSIONAL",
-      "meta": "eVA order PO05240714 • 2026-01-27",
-      "score": "$221,895",
-      "amount": 221895.0,
-      "order": "PO05240714",
-      "vendor": "Thompson and Litton Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
       "place": "Radford",
       "title": "Radford University",
       "desc": "Audience and Court Speaker and Amplification  Fulcrum AHC2XX for Audience Coverage; Fulcrum Yoke Mounts for RX8-MT60; Ashly CA-502 for Concession and Restroom Loudspeakers",
@@ -3002,6 +2990,18 @@
       "amount": 89068.75,
       "order": "PO03605857-V2",
       "vendor": "PILLAR Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Salem",
+      "title": "Division of Community Corrections",
+      "desc": "Sex Offender Treatment services per contract DOC-22-007 RAD for the term 12/01/2025 thru 11/30/2026 as follows:  1.  Comprehensive Assessment-  $850 (per assessment)  2.  Intake Assessment - $350 (per assessment)  3. Individual Assessment Instruments (per offender)  Abel Assessment for Sexual Intere",
+      "meta": "eVA order PO05224226 • 2026-01-08",
+      "score": "$87,200",
+      "amount": 87200.0,
+      "order": "PO05224226",
+      "vendor": "The Radford Counseling Group LLC",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     }
   ]

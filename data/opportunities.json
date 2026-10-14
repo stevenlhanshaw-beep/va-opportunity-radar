@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-13T10:37:32.349420+00:00",
-  "count": 6,
+  "updated": "2026-10-14T10:48:34.593563+00:00",
+  "count": 7,
   "sources": [
     {
       "agency": "City of Salem",
       "place": "Salem",
       "source": "https://www.salemva.gov/Bids.aspx",
-      "count": 5,
+      "count": 6,
       "status": "ok"
     },
     {
@@ -30,6 +30,19 @@
       "closing": "Open Until Contracted",
       "desc": "The Town of Christiansburg will make surplus brick dust available for sale to the general public at $50.00 for a 2-yard bucket (approximately 2 tons) at the Town Public Works complex at 300 Scattergood Drive, N.W., Christiansburg, VA 24073. The Town will load the surplus in 2-yard increments Monday through Friday, excluding Town holidays 8:30 a.m. until 4 p.m. with 48-hour notice. Contact April Overby at (540) 382-1151 x 6005 to schedule loading. There is no scale system on-site and the Town...",
       "source": "https://www.christiansburg.org/bids.aspx?bidID=104"
+    },
+    {
+      "kind": "opportunity",
+      "place": "Salem",
+      "agency": "City of Salem",
+      "title": "Air Filters",
+      "solicitation": "2027-011",
+      "category": "Bid Opportunities",
+      "status": "Open",
+      "published": "10/13/2026 12:00 AM",
+      "closing": "Open Until Contracted",
+      "desc": "CITY OF SALEM, VIRGINIA CITY OF SALEM — PURCHASING DEPARTMENT 114 N. Broad Street Salem, Virginia 24153 AIR FILTERS LEGAL NOTICE / INVITATION TO BID General Notice City of Salem (Owner) is requesting Bids for the following: Air Filters (ITB #2027-011). Bids for this Invitation to Bid will be received at the Salem Purchasing Department located at 114 N. Broad Street, Salem, VA 24153, until Thursday, November 12, 2026, at 3:00 P.M. local time . Bids may be submitted by hand delivery or mail to...",
+      "source": "https://www.salemva.gov/bids.aspx?bidID=94"
     },
     {
       "kind": "opportunity",

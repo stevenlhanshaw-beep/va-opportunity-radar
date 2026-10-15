@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-14T10:48:34.593563+00:00",
-  "count": 7,
+  "updated": "2026-10-15T10:50:14.718314+00:00",
+  "count": 8,
   "sources": [
     {
       "agency": "City of Salem",
       "place": "Salem",
       "source": "https://www.salemva.gov/Bids.aspx",
-      "count": 6,
+      "count": 7,
       "status": "ok"
     },
     {
@@ -43,6 +43,19 @@
       "closing": "Open Until Contracted",
       "desc": "CITY OF SALEM, VIRGINIA CITY OF SALEM — PURCHASING DEPARTMENT 114 N. Broad Street Salem, Virginia 24153 AIR FILTERS LEGAL NOTICE / INVITATION TO BID General Notice City of Salem (Owner) is requesting Bids for the following: Air Filters (ITB #2027-011). Bids for this Invitation to Bid will be received at the Salem Purchasing Department located at 114 N. Broad Street, Salem, VA 24153, until Thursday, November 12, 2026, at 3:00 P.M. local time . Bids may be submitted by hand delivery or mail to...",
       "source": "https://www.salemva.gov/bids.aspx?bidID=94"
+    },
+    {
+      "kind": "opportunity",
+      "place": "Salem",
+      "agency": "City of Salem",
+      "title": "City Hall Fire Escape Lead Paint Removal and Painting",
+      "solicitation": "2027-020",
+      "category": "Bid Opportunities",
+      "status": "Open",
+      "published": "10/14/2026 12:00 AM",
+      "closing": "Open Until Contracted",
+      "desc": "CITY OF SALEM, VIRGINIA CITY OF SALEM — PURCHASING DEPARTMENT 114 N. Broad Street Salem, Virginia 24153 CITY HALL FIRE ESCAPE LEAD PAINT REMOVAL AND PAINTING LEGAL NOTICE / INVITATION TO BID General Notice City of Salem (Owner) is requesting Bids for the following: City Hall Fire Escape Lead Paint Removal and Painting (ITB #2027-020). Sealed Bids for this Invitation to Bid will be received at the Salem Purchasing Department located at 114 N. Broad Street, Salem, VA 24153, until Thursday, Nove...",
+      "source": "https://www.salemva.gov/bids.aspx?bidID=95"
     },
     {
       "kind": "opportunity",

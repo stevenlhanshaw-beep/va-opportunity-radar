@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-17T10:43:04.056066+00:00",
+  "updated": "2026-10-18T10:43:17.981386+00:00",
   "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca",
   "record_count": 12812,
-  "count": 4463,
+  "count": 4455,
   "signals": [
     {
       "kind": "spend",
@@ -602,6 +602,18 @@
       "amount": 1010990.5,
       "order": "PO04934615-V3",
       "vendor": "Sisson & Ryan Quarry LLC",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Roanoke",
+      "title": "Virginia Department of Transportation",
+      "desc": "Roadway Monitor, Intermediate; Roadway Monitor Junior",
+      "meta": "eVA order PO05384952 • 2026-06-17",
+      "score": "$997,920",
+      "amount": 997920.0,
+      "order": "PO05384952",
+      "vendor": "PILLAR Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -1266,6 +1278,18 @@
     },
     {
       "kind": "spend",
+      "place": "Roanoke",
+      "title": "Virginia Department of Transportation",
+      "desc": "Concrete Bucket, minimum 1 cubic yard; Rubber Tire Loader 110 HP Plus 2 Yard Bucket with Experienced Operator; Motorgrader 135 HP minimum with Experienced Operator",
+      "meta": "eVA order PO04997956-V5 • 2026-02-27",
+      "score": "$425,818",
+      "amount": 425818.31,
+      "order": "PO04997956-V5",
+      "vendor": "L A S TRUCKING AND CONSTRUCTION INC",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
       "place": "Richmond",
       "title": "Virginia Department of Transportation",
       "desc": "MAINTENANCE OPERATIONS CONSULTING SERVICES MAINTENANCE OPERATIONS CONSULTING SERVICES",
@@ -1334,6 +1358,18 @@
       "amount": 367439.38,
       "order": "PO04876753-V3",
       "vendor": "Kesler Contracting",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Roanoke",
+      "title": "Virginia Department of Transportation",
+      "desc": "Concrete Bucket, minimum 1yd w/operator; Rubber tire loader min. 110hp  w/operator; Motor grader min. 135hp  w/operator",
+      "meta": "eVA order PO04876408-V12 • 2025-08-19",
+      "score": "$346,980",
+      "amount": 346980.0,
+      "order": "PO04876408-V12",
+      "vendor": "C. R. Henderson Company",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -1424,18 +1460,6 @@
       "kind": "spend",
       "place": "Roanoke",
       "title": "Virginia Department of Transportation",
-      "desc": "Concrete Bucket, minimum 1 cubic yard; Rubber Tire Loader 110 HP Plus 2 Yard Bucket with Experienced Operator; Motorgrader 135 HP minimum with Experienced Operator",
-      "meta": "eVA order PO04997956-V5 • 2026-02-27",
-      "score": "$299,539",
-      "amount": 299539.03,
-      "order": "PO04997956-V5",
-      "vendor": "L A S TRUCKING AND CONSTRUCTION INC",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Roanoke",
-      "title": "Virginia Department of Transportation",
       "desc": "SM-9.5D FOB Plant Mix; BM-25.0 FOB Plant Mix; IM-19.0D FOB Plant Mix",
       "meta": "eVA order PO05227310-V3 • 2026-03-05",
       "score": "$293,421",
@@ -1502,18 +1526,6 @@
       "amount": 292051.83,
       "order": "PO04942212-V10",
       "vendor": "Superior Paving Corporation",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Roanoke",
-      "title": "Virginia Department of Transportation",
-      "desc": "Concrete Bucket, minimum 1yd w/operator; Rubber tire loader min. 110hp  w/operator; Motor grader min. 135hp  w/operator",
-      "meta": "eVA order PO04876408-V12 • 2025-08-19",
-      "score": "$291,060",
-      "amount": 291060.0,
-      "order": "PO04876408-V12",
-      "vendor": "C. R. Henderson Company",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -1586,6 +1598,18 @@
       "amount": 261840.81,
       "order": "PO04908710-V11",
       "vendor": "ALLEGHANY ASPHALT & CONSTRUCTION INC",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Salem",
+      "title": "Virginia Department of Transportation",
+      "desc": "QA/AC Manager; Other Direct Costs",
+      "meta": "eVA order PO05384953 • 2026-06-17",
+      "score": "$258,355",
+      "amount": 258355.0,
+      "order": "PO05384953",
+      "vendor": "PILLAR Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -1693,6 +1717,18 @@
       "score": "$251,590",
       "amount": 251590.0,
       "order": "PO05051862-V5",
+      "vendor": "PILLAR Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Lynchburg",
+      "title": "Virginia Department of Transportation",
+      "desc": "Maintenance Contract ConsultantProgram Manager -   $203.00/hrProject Manager -    $187.75/hrQA/QC Manager -   $167.50/hrEstimator -   $152.25/hrTechnical Writer -    $132.00/hrInspection Services -   $117.75/hr",
+      "meta": "eVA order PO05384950 • 2026-06-17",
+      "score": "$251,381",
+      "amount": 251381.25,
+      "order": "PO05384950",
       "vendor": "PILLAR Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
@@ -2274,6 +2310,18 @@
     },
     {
       "kind": "spend",
+      "place": "Salem",
+      "title": "Virginia Department of Transportation",
+      "desc": "Maintenance Management; Program Manager",
+      "meta": "eVA order PO05384971 • 2026-06-17",
+      "score": "$141,775",
+      "amount": 141775.0,
+      "order": "PO05384971",
+      "vendor": "PILLAR Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
       "place": "State Farm",
       "title": "DOC - Division of Institutions",
       "desc": "CALS VT DAIRY MILK DALES - SEPT",
@@ -2330,6 +2378,18 @@
       "amount": 132232.48,
       "order": "PO04934616-V3",
       "vendor": "Salem Stone Corp",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Christiansburg",
+      "title": "Virginia Department of Transportation",
+      "desc": "CRUSHED GRADE 26; NO. 68 STONE; NO. 78 STONE",
+      "meta": "eVA order PO05273069-V4 • 2026-06-08",
+      "score": "$127,956",
+      "amount": 127956.0,
+      "order": "PO05273069-V4",
+      "vendor": "Salem Stone Corporation",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -2942,66 +3002,6 @@
       "amount": 93407.0,
       "order": "A208_P4637392",
       "vendor": "Johnson Controls Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Christiansburg",
-      "title": "Virginia Department of Transportation",
-      "desc": "CRUSHED GRADE 26; NO. 68 STONE",
-      "meta": "eVA order PO05273069-V4 • 2026-06-08",
-      "score": "$91,804",
-      "amount": 91804.0,
-      "order": "PO05273069-V4",
-      "vendor": "Salem Stone Corporation",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Salem",
-      "title": "Virginia Department of Transportation",
-      "desc": "NO. 1 STONE; NO. 21A STONE; NO. 21 B STONE",
-      "meta": "eVA order PO04934655-V4 • 2026-03-02",
-      "score": "$91,039",
-      "amount": 91039.04,
-      "order": "PO04934655-V4",
-      "vendor": "BOXLEY MATERIALS CO",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Richmond",
-      "title": "Department of General Services",
-      "desc": "Pay Rate Low $46.00  Pay Rate High $158.00",
-      "meta": "eVA order PO04910672-V2 • 2026-05-01",
-      "score": "$89,950",
-      "amount": 89950.0,
-      "order": "PO04910672-V2",
-      "vendor": "Schnabel Engineering, LLC",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Bristol",
-      "title": "Virginia Department of Transportation",
-      "desc": "MAINTENANCE CONSULTING",
-      "meta": "eVA order PO03605857-V2 • 2026-05-18",
-      "score": "$89,069",
-      "amount": 89068.75,
-      "order": "PO03605857-V2",
-      "vendor": "PILLAR Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Salem",
-      "title": "Division of Community Corrections",
-      "desc": "Sex Offender Treatment services per contract DOC-22-007 RAD for the term 12/01/2025 thru 11/30/2026 as follows:  1.  Comprehensive Assessment-  $850 (per assessment)  2.  Intake Assessment - $350 (per assessment)  3. Individual Assessment Instruments (per offender)  Abel Assessment for Sexual Intere",
-      "meta": "eVA order PO05224226 • 2026-01-08",
-      "score": "$87,200",
-      "amount": 87200.0,
-      "order": "PO05224226",
-      "vendor": "The Radford Counseling Group LLC",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     }
   ]

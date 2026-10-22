@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T10:48:19.087078+00:00",
+  "updated": "2026-10-22T15:19:03.074826+00:00",
   "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca",
   "record_count": 12812,
   "count": 4455,
@@ -342,6 +342,18 @@
     },
     {
       "kind": "spend",
+      "place": "Roanoke",
+      "title": "Virginia Department of Transportation",
+      "desc": "Roadway Monitor, Intermediate; Roadway Monitor Junior; Roadway Monitor, Senior",
+      "meta": "eVA order PO05384952 • 2026-06-17",
+      "score": "$1,338,120",
+      "amount": 1338120.0,
+      "order": "PO05384952",
+      "vendor": "PILLAR Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
       "place": "Radford",
       "title": "Radford University",
       "desc": "UTILITY TUNNEL IMPROVEMENTS TO INCLUDE REPLACEMENT OF CONCRETE WALLS AND CONCRETE TUNNEL TOPS IN ACCORDANCE WITH PLANS, SPECIFICATIONS AND ALL ADDENDA / REFERENCE ATTACHED EXECUTED CONTRACT & BONDS; THIS CHANGE ORDER #1 IS TO INCORPORATE THE UPDATED DOLI WAGE DETERMINATION REFERENCE THE EXECUTED CHA",
@@ -606,18 +618,6 @@
     },
     {
       "kind": "spend",
-      "place": "Roanoke",
-      "title": "Virginia Department of Transportation",
-      "desc": "Roadway Monitor, Intermediate; Roadway Monitor Junior",
-      "meta": "eVA order PO05384952 • 2026-06-17",
-      "score": "$997,920",
-      "amount": 997920.0,
-      "order": "PO05384952",
-      "vendor": "PILLAR Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
       "place": "Richmond",
       "title": "Virginia Community College System - System Office",
       "desc": "CONSTRUCTION SERVICES, GENERAL (INCL. MAINTENANCE AND REPAIR SERVICES)",
@@ -866,6 +866,18 @@
       "amount": 603528.65,
       "order": "PO04637431-V4",
       "vendor": "SRC Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Salem",
+      "title": "Virginia Department of Transportation",
+      "desc": "Maintenance Management; Program Manager; Project Manager",
+      "meta": "eVA order PO05384971 • 2026-06-17",
+      "score": "$603,200",
+      "amount": 603200.0,
+      "order": "PO05384971",
+      "vendor": "PILLAR Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -1262,18 +1274,6 @@
       "amount": 429999.0,
       "order": "PO05118760",
       "vendor": "VIRGINIA POLYTECHNIC INSTITUTE & ST UNIV",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Bristol",
-      "title": "Virginia Department of Transportation",
-      "desc": "Maintenance Contract Consultant; Maintenance Management; Program Manager",
-      "meta": "eVA order PO05162315 • 2025-10-17",
-      "score": "$429,200",
-      "amount": 429200.0,
-      "order": "PO05162315",
-      "vendor": "PILLAR Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -2310,18 +2310,6 @@
     },
     {
       "kind": "spend",
-      "place": "Salem",
-      "title": "Virginia Department of Transportation",
-      "desc": "Maintenance Management; Program Manager",
-      "meta": "eVA order PO05384971 • 2026-06-17",
-      "score": "$141,775",
-      "amount": 141775.0,
-      "order": "PO05384971",
-      "vendor": "PILLAR Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
       "place": "State Farm",
       "title": "DOC - Division of Institutions",
       "desc": "CALS VT DAIRY MILK DALES - SEPT",
@@ -3002,6 +2990,18 @@
       "amount": 93407.0,
       "order": "A208_P4637392",
       "vendor": "Johnson Controls Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Salem",
+      "title": "Virginia Department of Transportation",
+      "desc": "NO. 1 STONE; NO. 21A STONE; NO. 21 B STONE",
+      "meta": "eVA order PO04934655-V4 • 2026-03-02",
+      "score": "$91,039",
+      "amount": 91039.04,
+      "order": "PO04934655-V4",
+      "vendor": "BOXLEY MATERIALS CO",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     }
   ]

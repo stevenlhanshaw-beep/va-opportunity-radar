@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-26T16:48:53.520538+00:00",
+  "updated": "2026-10-27T15:53:59.897467+00:00",
   "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca",
   "record_count": 12812,
-  "count": 4455,
+  "count": 4454,
   "signals": [
     {
       "kind": "spend",
@@ -2134,8 +2134,8 @@
       "title": "Virginia Department of Transportation",
       "desc": "Maintenance Support/Office Manager; Roadway Monitor; Per Diem Allowance - Other Direct Costs",
       "meta": "eVA order PO05384670 • 2026-06-17",
-      "score": "$152,460",
-      "amount": 152460.0,
+      "score": "$152,724",
+      "amount": 152724.0,
       "order": "PO05384670",
       "vendor": "PILLAR Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"

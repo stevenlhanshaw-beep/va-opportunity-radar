@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-03T17:52:13.782948+00:00",
-  "count": 8,
+  "updated": "2026-11-04T18:00:37.050748+00:00",
+  "count": 7,
   "sources": [
     {
       "agency": "City of Salem",
       "place": "Salem",
       "source": "https://www.salemva.gov/Bids.aspx",
-      "count": 7,
+      "count": 6,
       "status": "ok"
     },
     {
@@ -61,14 +61,14 @@
       "kind": "opportunity",
       "place": "Salem",
       "agency": "City of Salem",
-      "title": "Drug and Alcohol Testing Services",
-      "solicitation": "2027-002",
+      "title": "Directional Boring and Conduit Installation-Oak Park Apartments",
+      "solicitation": "ITB 2027-023",
       "category": "Bid Opportunities",
       "status": "Open",
-      "published": "8/5/2026 12:00 AM",
+      "published": "11/4/2026 12:00 AM",
       "closing": "Open Until Contracted",
-      "desc": "General Notice City of Salem (Owner) is requesting Proposals for the following: Drug & Alcohol Testing Services (RFP #2027-002). Proposals for this Request for Proposals will be received at the Salem Purchasing Department located at 114 N. Broad Street, Salem, VA 24153, until Friday, September 4, 2026, at 3:00 P.M. local time. Proposals may be submitted by hand delivery or mail to the address above, or electronically through eVA at https://eva.virginia.gov/ , the Commonwealth of Virginia’s el...",
-      "source": "https://www.salemva.gov/bids.aspx?bidID=90"
+      "desc": "LEGAL PUBLICATION NOTICE CITY OF SALEM, VIRGINIA INVITATION TO BID (ITB) ITB #2027-023 – Directional Boring & Conduit Installation – Oak Park Apartments The City of Salem, Virginia, is soliciting sealed bids from qualified contractors to install underground electric conduit by horizontal directional boring, along with primary pull boxes and transformer pads, at Oak Park Apartments, 105 Otter Avenue, Salem, Virginia. Work includes approximately 1,300 LF of boring, 1,400 LF of 2-inch conduit, f...",
+      "source": "https://www.salemva.gov/bids.aspx?bidID=96"
     },
     {
       "kind": "opportunity",
@@ -108,19 +108,6 @@
       "closing": "Open Until Contracted",
       "desc": "CITY OF SALEM, VIRGINIA CITY OF SALEM — PURCHASING DEPARTMENT 114 N. Broad Street Salem, Virginia 24153 ON DEMAND PAVING SERVICES LEGAL NOTICE / REQUEST FOR PROPOSALS General Notice City of Salem (Owner) is requesting Proposals for the following: On Demand Paving Services (RFP #2027-014). Proposals for this Request for Proposals will be received at the Salem Purchasing Department located at 114 N. Broad Street, Salem, VA 24153, until Friday, October 30, 2026, at 3:00 P.M. local time . Proposa...",
       "source": "https://www.salemva.gov/bids.aspx?bidID=92"
-    },
-    {
-      "kind": "opportunity",
-      "place": "Salem",
-      "agency": "City of Salem",
-      "title": "On Demand Striping and Marking Services",
-      "solicitation": "2027-015",
-      "category": "Bid Opportunities",
-      "status": "Open",
-      "published": "10/12/2026 12:00 AM",
-      "closing": "Open Until Contracted",
-      "desc": "CITY OF SALEM, VIRGINIA CITY OF SALEM — PURCHASING DEPARTMENT 114 N. Broad Street Salem, Virginia 24153 ON DEMAND STRIPING AND MARKING SERVICES LEGAL NOTICE / REQUEST FOR PROPOSALS General Notice City of Salem (Owner) is requesting Proposals for the following: On Demand Striping and Marking Services (RFP #2027-015). Proposals for this Request for Proposals will be received at the Salem Purchasing Department located at 114 N. Broad Street, Salem, VA 24153, until Friday, October 30, 2026, at 3:...",
-      "source": "https://www.salemva.gov/bids.aspx?bidID=93"
     }
   ]
 }

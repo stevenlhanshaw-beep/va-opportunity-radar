@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-16T20:31:00.951462+00:00",
+  "updated": "2026-11-17T19:11:52.394681+00:00",
   "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca",
-  "record_count": 12928,
-  "count": 6593,
+  "record_count": 12940,
+  "count": 6601,
   "signals": [
     {
       "kind": "spend",
@@ -1386,6 +1386,30 @@
     },
     {
       "kind": "spend",
+      "place": "Salem",
+      "title": "Virginia Department of Transportation",
+      "desc": "Unskilled Laborer; TRACTOR/LOWBOY TRAILER, 35 TON MIN W/EXPERIENCED OPERATOR; FLATBED PULL-BEHIND TRAILER, MIN 10 TON CAPACITY WITH TOW VEHICLE",
+      "meta": "eVA order PO05087096 • 2025-08-04",
+      "score": "$226,317",
+      "amount": 226316.75,
+      "order": "PO05087096",
+      "vendor": "Randy Hostetter Excavating LLC",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Salem",
+      "title": "Virginia Department of Transportation",
+      "desc": "Unskilled Laborer; TRACTOR/LOWBOY TRAILER, 35 TON MIN W/EXPERIENCED OPERATOR; FLATBED PULL-BEHIND TRAILER, MIN 10 TON CAPACITY WITH TOW VEHICLE",
+      "meta": "eVA order PO05087096-V2 • 2025-09-09",
+      "score": "$226,317",
+      "amount": 226316.75,
+      "order": "PO05087096-V2",
+      "vendor": "Randy Hostetter Excavating LLC",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
       "place": "Richmond",
       "title": "Virginia Department of Transportation",
       "desc": "TO.26-054_maintenance guardrail terminal inspections",
@@ -1890,18 +1914,6 @@
     },
     {
       "kind": "spend",
-      "place": "Blacksburg",
-      "title": "Town of Blacksburg",
-      "desc": "TOWN OF BLACKSBURG PRICES FORK - ADA RAMP IMPROVEMENTS - PER JOB ORDER #135696.00 PROPOSAL DATE 12/5/2024 (PROJECT NAME: BLACKSBURG SGR PAVING)    - PRICING INCLUDES ALL TRAFFIC CONTROL NEEDED FOR THE JOB   - PRICE IS ONLY VALID IF DONE IN ONE MOBILIZATION AND WORK IS DONE BACK TO BACK   - PRICE INC",
-      "meta": "eVA order PO04863864-V2 • 2025-08-22",
-      "score": "$143,789",
-      "amount": 143789.07,
-      "order": "PO04863864-V2",
-      "vendor": "Extreme Concrete & Construction Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
       "place": "Christiansburg",
       "title": "Virginia Department of Transportation",
       "desc": "SM-9.5A BMD",
@@ -1910,18 +1922,6 @@
       "amount": 143772.17,
       "order": "PO05322124-V6",
       "vendor": "Adams Construction Company",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Harrisonburg",
-      "title": "Division of Community Corrections",
-      "desc": "Term: ********* 25OutpatientSubstanceAbuseTreatmentServicestobeconductedeitherinpersonatapprovedPurchasingAgencyLocation,VendorLocation,orVirtually,orusingahybridarrangementatthediscretionoftheChiefProbationOfficer,Superintendent,ortheirdesignee    Service1BioPsychosocialAssessment,$15000(inpersonat",
-      "meta": "eVA order PO04858134-V5 • 2025-07-08",
-      "score": "$143,120",
-      "amount": 143120.0,
-      "order": "PO04858134-V5",
-      "vendor": "The Radford Counseling Group LLC",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -2442,18 +2442,6 @@
     },
     {
       "kind": "spend",
-      "place": "Salem",
-      "title": "Virginia Department of Transportation",
-      "desc": "MAINTENANCE CONSULTING - Labor Expenses; MAINTENANCE CONSULTING - Materials",
-      "meta": "eVA order PO03588507-V2 • 2025-10-02",
-      "score": "$94,434",
-      "amount": 94434.5,
-      "order": "PO03588507-V2",
-      "vendor": "PILLAR Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
       "place": "Christiansburg",
       "title": "Virginia Department of Transportation",
       "desc": "SM-9.5D FOB Plant Mix - Blacksburg Plant",
@@ -2502,18 +2490,6 @@
     },
     {
       "kind": "spend",
-      "place": "Richmond",
-      "title": "Virginia Department of Transportation",
-      "desc": "MAINTENANCE CONSULTING",
-      "meta": "eVA order PO03500667-V2 • 2026-04-29",
-      "score": "$86,050",
-      "amount": 86049.8,
-      "order": "PO03500667-V2",
-      "vendor": "PILLAR Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
       "place": "Christiansburg",
       "title": "Virginia Department of Transportation",
       "desc": "MOWING SERVICES, RIGHT OF WAY, PER VADOT SPECIFICATIONS RIGHT OF WAY, MOWING SERVICES - GENERAL:SECONDARY MOWING FOR DUBLIN AHQ.; MOWING SERVICES, RIGHT OF WAY, PER VADOT SPECIFICATIONS RIGHT OF WAY MOWING, SECONDARY, TRACTOR MOWING SERVICESMOWING SERVICES, RIGHT OF WAY, PER VADOT SPECIFICATIONS RIG",
@@ -2546,18 +2522,6 @@
       "amount": 85562.0,
       "order": "A207_PO-0224212-V3",
       "vendor": "Thompson and Litton Inc",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Salem",
-      "title": "Virginia Department of Transportation",
-      "desc": "Unskilled Laborer; TRACTOR/LOWBOY TRAILER, 35 TON MIN W/EXPERIENCED OPERATOR; FLATBED PULL-BEHIND TRAILER, MIN 10 TON CAPACITY WITH TOW VEHICLE",
-      "meta": "eVA order PO05087096 • 2025-08-04",
-      "score": "$85,026",
-      "amount": 85026.5,
-      "order": "PO05087096",
-      "vendor": "Randy Hostetter Excavating LLC",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -2726,6 +2690,18 @@
       "amount": 72092.5,
       "order": "A501_0001301099-V4",
       "vendor": "Norwood Development Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Christiansburg",
+      "title": "Virginia Department of Transportation",
+      "desc": "MOTORGRADER, 135 HP PLUS, WITH SCARIFIER, W/OPERATOR; PICK UP TRUCK, WITH OPERATOR",
+      "meta": "eVA order PO05243727 • 2026-01-29",
+      "score": "$72,000",
+      "amount": 72000.0,
+      "order": "PO05243727",
+      "vendor": "Gardner Inc.",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
@@ -3002,6 +2978,30 @@
       "amount": 57999.0,
       "order": "PO05098604",
       "vendor": "Thompson and Litton Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Christiansburg",
+      "title": "Virginia Department of Transportation",
+      "desc": "SWEEPING SERVICES - PLANNED, SECTION A - MONTGOMERY COUNTY; SWEEPING SERVICES - PLANNED, SECTION B - FLOYD COUNTY; SWEEPING SERVICES - PLANNED, SECTION C - GILES COUNTY",
+      "meta": "eVA order PO05032784-V2 • 2025-07-08",
+      "score": "$57,899",
+      "amount": 57898.95,
+      "order": "PO05032784-V2",
+      "vendor": "Hydro Quick Cleaning Systems LLC",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Christiansburg",
+      "title": "Virginia Department of Transportation",
+      "desc": "DUMP TRUCK, TANDEM, MIN. 50,000 LBS GVW MIN.,  w/ EXPERIENCED OPERATOR; TRACK DOZER, CATERPILLAR D6 OR EQUIVALENT, W/ EXPERIENCED OPERATOR; TRACTOR/LOWBOY TRAILER, 35 TON MIN., WITH OPERATOR",
+      "meta": "eVA order PO05055194-V2 • 2025-07-10",
+      "score": "$57,152",
+      "amount": 57151.8,
+      "order": "PO05055194-V2",
+      "vendor": "Gardner Inc.",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     }
   ]

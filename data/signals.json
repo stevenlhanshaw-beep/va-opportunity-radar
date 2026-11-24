@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-23T22:04:22.676539+00:00",
+  "updated": "2026-11-24T20:40:50.114591+00:00",
   "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca",
   "record_count": 12940,
-  "count": 6601,
+  "count": 6594,
   "signals": [
     {
       "kind": "spend",
@@ -1688,18 +1688,6 @@
       "kind": "spend",
       "place": "Glen Allen",
       "title": "Department of Social Services",
-      "desc": "Human Services (Not Otherwise Classified)",
-      "meta": "eVA order PO05107203 • 2025-08-22",
-      "score": "$165,960",
-      "amount": 165960.0,
-      "order": "PO05107203",
-      "vendor": "Womens Resource Center",
-      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
-    },
-    {
-      "kind": "spend",
-      "place": "Glen Allen",
-      "title": "Department of Social Services",
       "desc": "Equipment - Domestic Violence Prevention and Services - Family Resource Center; Training / Transportation - Domestic Violence Prevention and Services - Family Resource Center; Other - Domestic Violence Prevention and Services - Family Resource Center",
       "meta": "eVA order PO05100603 • 2025-08-15",
       "score": "$165,960",
@@ -2738,6 +2726,18 @@
       "amount": 71000.0,
       "order": "PO05084360",
       "vendor": "Edwards Business Machines  Inc",
+      "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
+    },
+    {
+      "kind": "spend",
+      "place": "Blacksburg",
+      "title": "Virginia Polytechnic Institute and State University",
+      "desc": "-Confirming invoice 0576 dated and received",
+      "meta": "eVA order A208_P4733925 • 2026-02-12",
+      "score": "$69,520",
+      "amount": 69520.09,
+      "order": "A208_P4733925",
+      "vendor": "Medical Facilities of America Inc",
       "source": "https://data.virginia.gov/dataset/eva-procurement-data-2026-virginia/resource/76f6831d-fac7-4c1f-8313-cc7ff238ddca"
     },
     {
